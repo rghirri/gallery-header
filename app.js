@@ -1,3 +1,33 @@
+/* Gallery Header */
+const headerGallery = document.querySelector(".galleryHeader");
+
+function generateGalleryHeader(headerData) {
+    // galleryHeader.innerHTML = '';
+    headerData.forEach(headerData => {
+
+        let galleryTitle = document.createElement("h1");
+        galleryTitle.classList.add("galleryTitle");
+        galleryTitle.innerText = headerData.title;
+
+        let gallerySubTitle = document.createElement("div");
+        gallerySubTitle.classList.add("gallerySubtitle");
+        let gallerySubTitleParagraph = document.createElement("p");
+        gallerySubTitleParagraph.innerText = headerData.subTitle;
+
+        gallerySubTitle.appendChild(gallerySubTitleParagraph);
+
+        headerGallery.append(galleryTitle, gallerySubTitle);
+
+    });
+    
+
+}
+generateGalleryHeader(galleryHeader);
+
+// console.log(galleryHeader);
+
+/* Gallery Images */
+
 const galleryContainer = document.querySelector(".galleryContainer");
 
 function generateGallery(columns, galleryImages) {
